@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ThemeController!{% endblock %}
+
+{% block body %}
+
+    <section class="container">
+
+        {% for message in app.flashes('success-comment')%}  
+            <div class="alert alert-success"> 
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <div class="galerie-theme">
+        <div class="galerie-theme-card">
+            <div class="galerie-theme-content">
+                <div class="card-img">
+                    {# <img src="{{ asset('/uploads/images/' ~ themes.imageName)}}" alt="Image du thème"> #}
+                </div>
+                {# <h3>{{themes.titre}}</h3>
+                <p>{{themes.color}}</p>
+                <p>{{themes.description}}</p> #}
+
+                {% if is_granted('ROLE_USER')%}
+                <div class="btn-theme">
+                    {# <a class="btn-modif" href={{ path("update_theme", {'id' : theme.id})}}>Modifier</a> #}
+                        {# <form action="{{ path("delete", {'id' : theme.id}) }}" method="POST" onsubmit="return confirm ('Confirmer la suppression?')">
+                            <input type="hidden" name="_method" value="delete">
+                            <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ theme.id)}}">
+                            <input class="btn-sup" id="delete" type="submit" value="Supprimer">
+                        </form> #}
+                </div>
+                {% endif %}
+                <div class="card-comment">
+                    <h5>Commentaires</h5>
+                    {# {% for comment in themes.comment %}
+                        <div class="comment">
+                            <p><strong>{{ comment.user.username }}</strong> a commenté votre thème :</p>
+                            <p class="comment-text">" {{ comment.comment }}" </p>
+                        </div>
+                        
+                    {% endfor %} #}
+                    {# {{form_start(commentform)}}
+                            {{form_widget(commentform)}}
+                            <button class="btn-comment">Ajouter un commentaire</button>
+                        {{form_end(commentform)}} #}
+                </div>
+            </div> 
+        </div>
+    </div>
+</section>
+
+{% endblock %}

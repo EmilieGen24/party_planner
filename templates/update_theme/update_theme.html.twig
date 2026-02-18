@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UpdateThemeController!{% endblock %}
+
+{% block body %}
+    {{form_start(themeform)}}
+        {{form_widget(themeform)}}
+        <button>Modifier</button>
+    {{form_end(themeform)}}
+
+{% endblock %}

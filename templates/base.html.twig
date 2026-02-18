@@ -14,6 +14,43 @@
         {% endblock %}
     </head>
     <body>
+        <header>
+            <nav class="container">
+                <div class="header-logo">
+                    <img src="{{ asset('../assets/img/logo.png')}}" alt="Image du logo">
+                </div>
+                <ul>
+                    <li><a href="{{ path("accueil") }}">Accueil</a></li>
+                    <li><a href="{{ path("theme") }}">Thème</a></li>
+                    <li><a href="{{ path("app_login") }}">Connexion</a></li>
+                    <li><a href="{{ path("register") }}">Inscription</a></li>
+
+                    {# Accès administrateur #}
+                    {% if is_granted('ROLE_ADMIN')%}
+                    <li><a href="{{ path("admin") }}">Admin</a></li>
+                    {% endif %}
+
+                    <li><a href="{{ path("contact") }}">Contact</a></li>
+                </ul>
+                <div class="menu-burger">
+                    <img class="icon-burger" src="{{ asset('../assets/img/boule_disco.png')}}" alt="Image du menu de navigation"> 
+                </div>
+            </nav>
+        </header>
         {% block body %}{% endblock %}
+         <footer>
+            <section class="container">
+                <div class="footer-logo">
+                    <img src="{{ asset('../assets/img/logo.png')}}" alt="Image du logo">
+                </div>
+                <div class="footer-content">
+                    <p>Nous sommes ici pour répondre à vos questions.</p>
+                    <a href="{{ path("contact") }}">Formulaire de contact</a>
+                    <div class="copy">
+                        <p>Copyright 2026 Party Planner. Tous droits réservés.</p>
+                    </div>
+                </div>
+            </section>
+        </footer>
     </body>
 </html>

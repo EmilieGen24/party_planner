@@ -1,0 +1,40 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+// --------------PAGE ACCUEIL-----------------
+.bg{
+    // background-image: url(../../../img/background.png);
+    // background-position:center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    background: 
+        radial-gradient(circle at top right, rgba(232, 62, 140, 0.25), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(255, 140, 66, 0.2) transparent 40%),
+        linear-gradient(180deg, #0F0F14, #4B1C71);
+    // color: #F7F5F2;
+    // height: 100vh;
+    // padding-top: 40px;
+}
+// SECTION HERO
+.hero{
+    background: radial-gradient(#E83E8C,#4B1C71);
+    // opacity: 60%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 15px;
+    border: 2px solid #F5C26B;
+    h1{
+        text-align: center;
+    }
+    p{
+        font-size: 2rem;
+        text-align: center;
+        color: var.$couleur-principale;
+    }
+    a{
+        color: white;
+    }
+}
+
+// SECTION CARD
+

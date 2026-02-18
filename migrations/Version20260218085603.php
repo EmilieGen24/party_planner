@@ -1,0 +1,37 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DoctrineMigrations;
+
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+final class Version20260218085603 extends AbstractMigration
+{
+    public function getDescription(): string
+    {
+        return '';
+    }
+
+    public function up(Schema $schema): void
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->addSql('ALTER TABLE color_theme ADD CONSTRAINT FK_E6B9B5BA7ADA1FB5 FOREIGN KEY (color_id) REFERENCES color (id) ON DELETE CASCADE');
+        $this->addSql('ALTER TABLE color_theme ADD CONSTRAINT FK_E6B9B5BA59027487 FOREIGN KEY (theme_id) REFERENCES theme (id) ON DELETE CASCADE');
+        $this->addSql('ALTER TABLE comment ADD CONSTRAINT FK_9474526C59027487 FOREIGN KEY (theme_id) REFERENCES theme (id)');
+        $this->addSql('ALTER TABLE theme ADD image_name VARCHAR(255) DEFAULT NULL, ADD updated_at DATETIME DEFAULT NULL');
+    }
+
+    public function down(Schema $schema): void
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+        $this->addSql('ALTER TABLE color_theme DROP FOREIGN KEY FK_E6B9B5BA7ADA1FB5');
+        $this->addSql('ALTER TABLE color_theme DROP FOREIGN KEY FK_E6B9B5BA59027487');
+        $this->addSql('ALTER TABLE comment DROP FOREIGN KEY FK_9474526C59027487');
+        $this->addSql('ALTER TABLE theme DROP image_name, DROP updated_at');
+    }
+}
