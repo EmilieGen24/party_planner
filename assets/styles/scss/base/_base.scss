@@ -3,6 +3,10 @@
 body {
     font-family: var.$police-principale;
     margin: 0;
+    background-image: url(../../../img/bg.png);
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h1{
@@ -16,6 +20,7 @@ h2{
     font-size: 3rem;
     color: var.$couleur-gold;
 }
+
 p{
-    color: var.$couleur-principale;
+    color: var.$couleur-secondaire;
 }

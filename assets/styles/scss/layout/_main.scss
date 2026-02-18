@@ -2,39 +2,73 @@
 @use "../abstracts/mixins" as mix;
 
 // --------------PAGE ACCUEIL-----------------
-.bg{
-    // background-image: url(../../../img/background.png);
-    // background-position:center;
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    background: 
-        radial-gradient(circle at top right, rgba(232, 62, 140, 0.25), transparent 40%),
-        radial-gradient(circle at bottom left, rgba(255, 140, 66, 0.2) transparent 40%),
-        linear-gradient(180deg, #0F0F14, #4B1C71);
+// .bg{
+   
+    // background: 
+    //     radial-gradient(circle at top right, rgba(232, 62, 140, 0.25), transparent 40%),
+    //     radial-gradient(circle at bottom left, rgba(255, 140, 66, 0.2) transparent 40%),
+    //     linear-gradient(180deg, #0F0F14, #4B1C71);
     // color: #F7F5F2;
     // height: 100vh;
     // padding-top: 40px;
-}
+// }
+
 // SECTION HERO
 .hero{
-    background: radial-gradient(#E83E8C,#4B1C71);
+    // background: linear-gradient(135deg, #FF8C42,#E83E8C, #4B1C71);
     // opacity: 60%;
+    background: linear-gradient(135deg,  #0F0F14, #4B1C71, #E83E8C, #FF8C42);
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 15px;
-    border: 2px solid #F5C26B;
+    box-shadow: 0 10px 30px rgba(245, 194, 107, 0.5);
+
     h1{
         text-align: center;
     }
+
     p{
         font-size: 2rem;
         text-align: center;
         color: var.$couleur-principale;
     }
+
     a{
         color: white;
     }
 }
 
 // SECTION CARD
-
+.galerie{
+    margin-bottom: 10%;
+    margin-top: 10%;
+    border-radius: 15px;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.card-content{
+            width: 40%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border: 1px solid rgba(245, 194, 107, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(245, 194, 107, 0.2);
+            padding: 10px;
+            padding-bottom: 5%;
+            text-align: center;
+            background-color: #0F0F14;
+        }
+        
+ .card-img{        
+            img{
+                width: 80%;
+                height: 30vh;
+                margin: 20px;
+                border-radius: 15px;
+            }
+        }

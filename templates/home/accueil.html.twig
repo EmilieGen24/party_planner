@@ -12,23 +12,25 @@
         </div>
     </section>
     <section class="container">
-        <div>
+        <div class="galerie">
             <h2>Nos dernières idées inspirantes</h2>
             <div class="card">
+
+            {# Pour afficher les cards themes #}
              {% for theme in themes %}
                 <div class="card-content">
                 <div class="card-img">
-                    {# <img src="{{ asset('/uploads/images/' ~ theme.imageName)}}" alt="Image thème halloween"> #}
+                    <img src="{{ asset('/uploads/images/' ~ theme.imageName)}}" alt="Image thème halloween">
                 </div>
                 <h3>{{theme.titre}}</h3>
-                <p>{{theme.description}}</p>
+                {# <p>{{theme.description}}</p> #}
                 {# <p>Couleur : {{theme.colors.name}}</p> #}
                 <a class="btn-plus" href={{ path("theme", {'id' : theme.id})}}>Voir plus</a>
                 </div>
-                {% endfor %}
+            {% endfor %}
+
             </div>
         </div>
-        
     </section>
 </main>
 {% endblock %}

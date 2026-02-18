@@ -15,23 +15,25 @@
         <div class="galerie-theme">
         <div class="galerie-theme-card">
             <div class="galerie-theme-content">
+             {% for theme in themes %}
                 <div class="card-img">
-                    {# <img src="{{ asset('/uploads/images/' ~ themes.imageName)}}" alt="Image du thème"> #}
+                    <img src="{{ asset('/uploads/images/' ~ theme.imageName)}}" alt="Image du thème">
                 </div>
-                {# <h3>{{themes.titre}}</h3>
-                <p>{{themes.color}}</p>
-                <p>{{themes.description}}</p> #}
+                <h3>{{theme.titre}}</h3>
+                {# <p>{{themes.color}}</p>  #}
+                <p>{{theme.description}}</p>
 
                 {% if is_granted('ROLE_USER')%}
                 <div class="btn-theme">
-                    {# <a class="btn-modif" href={{ path("update_theme", {'id' : theme.id})}}>Modifier</a> #}
-                        {# <form action="{{ path("delete", {'id' : theme.id}) }}" method="POST" onsubmit="return confirm ('Confirmer la suppression?')">
+                    <a class="btn-modif" href={{ path("update_theme", {'id' : theme.id})}}>Modifier</a>
+                        <form action="{{ path("delete", {'id' : theme.id}) }}" method="POST" onsubmit="return confirm ('Confirmer la suppression?')">
                             <input type="hidden" name="_method" value="delete">
                             <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ theme.id)}}">
                             <input class="btn-sup" id="delete" type="submit" value="Supprimer">
-                        </form> #}
+                        </form>
                 </div>
                 {% endif %}
+                {% endfor %}
                 <div class="card-comment">
                     <h5>Commentaires</h5>
                     {# {% for comment in themes.comment %}
