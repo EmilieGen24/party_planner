@@ -1,0 +1,46 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+// FOOTER
+
+footer{
+    padding-top: 5%;
+    padding-bottom: 20px;
+
+    .footer-content{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+
+        .footer-logo{
+            width: 20%;
+            img{
+                width: 50%;
+            }
+        }
+    
+        a{
+            color: var.$couleur-orange;
+            transition: all 0.3s ease;
+        }
+        a:hover{
+            text-decoration: underline;
+            color: var.$couleur-purple;
+            }
+
+        .logo-reseaux{
+            width: 20%;
+            img{
+                width: 20%;
+            }
+        }
+    }
+    
+    .copy p{
+        margin-top: 30px;
+        font-size: 0.9rem;
+        color: var.$couleur-orange;
+        text-align: center;
+    }
+}

@@ -6,26 +6,26 @@
 <main class="bg">
     <section class="container">
         <div class="hero">
-            <h1>Imagine des soirées inoubliables</h1>
-            <p>Crée, organise et partage des thèmes de soirées inspirantes et mémorables.</p>
-            <a href="{{ path("add_theme") }}">Créer un thème</a>
+            <h1>Des soirées qui brillent autant que vos idées</h1>
+            <p>Crée, imagine et partage des thèmes de soirées inspirantes et mémorables.</p>
+            <a class="btn-create" href="{{ path("add_theme") }}">Créer un thème</a>
         </div>
     </section>
     <section class="container">
         <div class="galerie">
             <h2>Nos dernières idées inspirantes</h2>
             <div class="card">
-
-            {# Pour afficher les cards themes #}
-             {% for theme in themes %}
+                {# Pour afficher les cards themes #}
+                {% for theme in themes %}
                 <div class="card-content">
-                <div class="card-img">
-                    <img src="{{ asset('/uploads/images/' ~ theme.imageName)}}" alt="Image thème halloween">
-                </div>
-                <h3>{{theme.titre}}</h3>
-                {# <p>{{theme.description}}</p> #}
-                {# <p>Couleur : {{theme.colors.name}}</p> #}
-                <a class="btn-plus" href={{ path("theme", {'id' : theme.id})}}>Voir plus</a>
+                    <div class="card-img">
+                        <img src="{{ asset('/uploads/images/' ~ theme.imageName)}}" alt="Image thème halloween">
+                    </div>
+                    <span class="badge badge-disco">{{theme.titre}}</span>
+                    <h3>{{theme.titre}}</h3>
+                    {# <p>{{theme.description}}</p> #}
+                    {# <p>Couleur : {{theme.colors.name}}</p> #}
+                    <a class="btn-plus" href={{ path("theme", {'id' : theme.id})}}>Voir</a>
                 </div>
             {% endfor %}
 

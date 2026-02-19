@@ -4,17 +4,15 @@
 // Logo
 
 header{
-    // background-color: var.$couleur-secondaire;
     padding-top: 20px;
     padding-bottom: 20px;
-    // border-bottom: 3px solid var.$couleur-btn;
     
     .menu-burger{
         display: none;
     }
 
     .header-logo{
-        width: 50%;
+        width: 30%;
         img{
             width: 60%;
         }
@@ -33,7 +31,7 @@ header{
 
                 a{
                     color: var.$couleur-gold;
-                    font-family: var.$police-secondaire;
+                    font-family: var.$police-principale;
                     transition: all 0.3s ease;
                     display: block;
                     text-decoration: none;

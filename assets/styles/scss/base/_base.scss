@@ -16,9 +16,16 @@ h1{
 }
 
 h2{
-    font-family: var.$police-secondaire;
+    font-family: var.$police-principale;
+    font-weight: 700;
     font-size: 3rem;
     color: var.$couleur-gold;
+    text-align: center;
+}
+
+h3{
+    font-family: var.$police-secondaire;
+    color: var.$couleur-orange;
 }
 
 p{

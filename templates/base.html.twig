@@ -40,15 +40,20 @@
         {% block body %}{% endblock %}
          <footer>
             <section class="container">
-                <div class="footer-logo">
-                    <img src="{{ asset('../assets/img/logo.png')}}" alt="Image du logo">
-                </div>
                 <div class="footer-content">
-                    <p>Nous sommes ici pour répondre à vos questions.</p>
-                    <a href="{{ path("contact") }}">Formulaire de contact</a>
-                    <div class="copy">
-                        <p>Copyright 2026 Party Planner. Tous droits réservés.</p>
+                    <div class="footer-logo">
+                        <img src="{{ asset('../assets/img/logo.png')}}" alt="Image du logo">
                     </div>
+                    <a href="">Mentions légales</a>
+                    <a href="{{ path("contact") }}">Formulaire de contact</a>
+                    <div class="logo-reseaux">
+                        <img src="{{ asset('../assets/img/logo_fb.png')}}" alt="Logo de Facebook">
+                        <img src="{{ asset('../assets/img/logo_pint.png')}}" alt="Logo de Pinterest">
+                        <img src="{{ asset('../assets/img/logo_insta.png')}}" alt="Logo d'Instagram">
+                    </div>
+                </div>
+                <div class="copy">
+                    <p>Copyright 2026 Party Planner. Tous droits réservés.</p>
                 </div>
             </section>
         </footer>

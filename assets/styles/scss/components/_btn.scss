@@ -1,0 +1,63 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+
+// PAGE ACCUEIL
+.btn-create{
+    @include mix.button;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    justify-self: center;
+    background: linear-gradient(135deg, #E83E8C, #FF8C42);
+    border: 2px solid rgba(245, 194, 107, 0.5);
+}
+
+.btn-create:hover{  
+    box-shadow: 2px 5px 20px rgba(245, 194, 107, 0.7);
+}
+
+.btn-plus{
+    @include mix.button;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    justify-self: center;
+    // background: black;
+    border: 2px solid var.$couleur-rose;
+    font-family: var.$police-secondaire;
+    color: #E83E8C;
+}
+
+.btn-plus:hover{  
+    box-shadow: 2px 5px 20px var.$couleur-rose;
+}
+
+
+// BADGE
+.badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 15px;
+    border-radius: 100px;
+    font-family: var.$police-principale;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.badge-disco{
+    background: linear-gradient(135deg, #E83E8C, #4B1C71);
+    box-shadow: 0 0 10px rgba(232, 62, 140, 0.6);
+}
+
+.badge-disco{
+    background: linear-gradient(135deg, #E83E8C, #4B1C71);
+    box-shadow: 0 0 10px rgba(232, 62, 140, 0.6);
+}
