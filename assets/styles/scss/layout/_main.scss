@@ -53,7 +53,7 @@
             margin-top: 20px;
             margin-bottom: 20px;
             font-size: 1.5rem;
-            border: 1px solid rgba(245, 194, 107, 0.15);
+            // border: 1px solid rgba(245, 194, 107, 0.15);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(245, 194, 107, 0.2);
             // padding: 10px;
@@ -82,5 +82,34 @@
 
 // --------------PAGE THEME-----------------
 
+.alert-success{
+    color: #E83E8C;
+    text-align: center;
+}
+
+.theme-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .theme-content p{
+        color: var.$couleur-principale;
+        text-align: center;
+    }
+    .theme-content h3{
+        text-align: center;
+    }
+    .theme-content{
+        width: 40%;
+    }
+}
+
+.theme-img img{
+    width: 30%;
+    height: 30vh;
+    
+}
 
 

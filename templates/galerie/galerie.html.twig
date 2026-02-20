@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GalerieController!{% endblock %}
+
+{% block body %}
+<section class="container">
+{# MESSAGE ALERT MODIF #}
+    {% for message in app.flashes('success-modif')%}  
+        <div class="alert alert-success"> 
+            {{ message }}
+        </div>
+    {% endfor %}
+{# MESSAGE ALERT ADD #}
+    {% for message in app.flashes('success-add')%}  
+        <div class="alert alert-success"> 
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="galerie">
+        <h2>Découvrez notre galerie de thèmes de soirées</h2>
+        <p>Nous vous proposons une liste de soirées inoubliables</p>
+        <div class="add-theme">
+            {% if is_granted('ROLE_USER')%}
+            <a class="btn-add" href={{ path("add_theme")}}>Ajouter un thème</a>
+            {% endif %}
+        </div>
+        <div class="galerie-card">
+            <div class="galerie-content">
+                {% for theme in themes %}
+                <div class="galerie-img">
+                    <img src="{{ asset('/uploads/images/' ~ theme.imageName)}}" alt="Image du thème">
+                </div>
+                <h3>{{theme.titre}}</h3>
+                {# <p>{{theme.color.name}}</p>  #}
+                <p>{{theme.description}}</p>
+
+                {% if is_granted('ROLE_USER')%}
+                <div class="btn-theme">
+                    <a class="btn-modif" href={{ path("update_theme", {'id' : theme.id})}}>Modifier</a>
+                    <form action="{{ path("delete", {'id' : theme.id}) }}" method="POST" onsubmit="return confirm ('Confirmer la suppression?')">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ theme.id)}}">
+                        <input class="btn-sup" id="delete" type="submit" value="Supprimer">
+                    </form>
+                </div>
+                {% endif %}
+
+                {% endfor %}
+            </div> 
+        </div>
+    </div>
+</section>
+{% endblock %}

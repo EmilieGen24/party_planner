@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Controller;
+
+use App\Repository\ThemeRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
+
+final class GalerieController extends AbstractController
+{
+    #[Route('/galerie', name: 'galerie')]
+    public function index(ThemeRepository $repository): Response
+    {
+        $themes = $repository->findAll();
+        return $this->render('galerie/galerie.html.twig', [
+             'themes' => $themes,
+        ]);
+    }
+}
