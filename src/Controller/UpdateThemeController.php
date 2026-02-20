@@ -21,7 +21,7 @@ final class UpdateThemeController extends AbstractController
             $entityManager->persist($theme);
             $entityManager->flush();
             $this->addFlash('success-modif','Le thème a été modifié avec succès !');
-            return $this->redirectToRoute('theme');
+            return $this->redirectToRoute('galerie');
         }
         return $this->render('update_theme/update_theme.html.twig', [
             'themeform' => $form->createView(),

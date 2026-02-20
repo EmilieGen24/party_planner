@@ -12,7 +12,7 @@
         </div>
     </section>
     <section class="container">
-        <div class="galerie">
+        <div class="card-accueil">
             <h2>Nos dernières idées inspirantes</h2>
             <div class="card">
                 {# Pour afficher les cards themes #}
@@ -21,7 +21,7 @@
                     <div class="card-img">
                         <img src="{{ asset('/uploads/images/' ~ theme.imageName)}}" alt="Image thème halloween">
                     </div>
-                    <span class="badge badge-disco">{{theme.titre}}</span>
+                    {# <span class="badge badge-disco">{{theme.titre}}</span> #}
                     <h3>{{theme.titre}}</h3>
                     {# <p>{{theme.description}}</p> #}
                     {# <p>Couleur : {{theme.colors.name}}</p> #}

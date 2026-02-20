@@ -15,7 +15,7 @@ header{
     .header-logo{
         width: 30%;
         img{
-            width: 60%;
+            width: 100%;
         }
     }
     nav{
@@ -37,7 +37,7 @@ header{
                     display: block;
                     text-decoration: none;
                     font-weight: 600;
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                 }
                 a:hover{
                     text-decoration: underline;

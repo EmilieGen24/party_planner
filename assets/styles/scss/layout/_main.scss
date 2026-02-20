@@ -2,23 +2,15 @@
 @use "../abstracts/mixins" as mix;
 
 // --------------PAGE ACCUEIL-----------------
-.bg{
-    // background: radial-gradient(circle at top left, #0F0F14, transparent 40%);
-    //     radial-gradient(circle at top right, rgba(232, 62, 140, 0.25), transparent 40%);
-        // radial-gradient(circle at bottom left, rgba(255, 140, 66, 0.2) transparent 40%),
-        // linear-gradient(180deg, #0F0F14, #4B1C71);
-    // color: #F7F5F2;
-    padding-top: 5%;
-}
+
 
 // SECTION HERO
 .hero{
-    // background: linear-gradient(135deg, #FF8C42,#E83E8C, #4B1C71);
-    // opacity: 60%;
-    background: linear-gradient(135deg, #4B1C71, #E83E8C, #FF8C42);
-    padding-top: 20px;
-    padding-bottom: 20px;
+    // background: linear-gradient(135deg, #4B1C71, #E83E8C, #FF8C42);
+    background-color: rgba(121, 18, 104, 0.5);
     border-radius: 15px;
+    padding: 40px;
+    margin-top: 8%;
     box-shadow: 0 10px 30px rgba(245, 194, 107, 0.5);
 
     h1{
@@ -30,18 +22,20 @@
         text-align: center;
         color: var.$couleur-principale;
     }
-
-    a{
-        color: white;
-    }
 }
 
 // SECTION CARD
-.galerie{
+.card-accueil{
     margin-bottom: 10%;
-    margin-top: 10%;
     border-radius: 15px;
+   
 }
+
+.card-accueil h2{
+    margin-top: 15%;
+    color: var.$couleur-gold;
+}
+
 .card{
     display: flex;
     justify-content: center;
@@ -53,11 +47,8 @@
             margin-top: 20px;
             margin-bottom: 20px;
             font-size: 1.5rem;
-            // border: 1px solid rgba(245, 194, 107, 0.15);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(245, 194, 107, 0.2);
-            // padding: 10px;
-            // padding-top: 20px;
             padding-bottom: 5%;
             text-align: center;
             background-color: #0F0F14;
@@ -80,36 +71,89 @@
     }
 
 
-// --------------PAGE THEME-----------------
+// ----------PAGE GALERIE DE THEMES-----------------
 
 .alert-success{
     color: #E83E8C;
     text-align: center;
 }
 
-.theme-card{
+.galerie{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    
+    .galerie-text{
+        // background: linear-gradient(135deg, #4B1C71, #E83E8C);
+        background-color: rgba(0,0,0,0.4);
+        box-shadow: 0 10px 30px rgba(245, 194, 107, 0.2);
+        border-radius: 15px;
+        padding: 50px;
+        margin-bottom: 5%;
+        // position: static;
+    }
+}
+
+.galerie p{
+    color: white;
+    text-align: center;
+    // z-index: 1;
+    // position: static;
+    font-size: 2rem;
+}
+.galerie-card{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 50px;
+    margin-top: 10%;
 
-    .theme-content p{
+    .galerie-content{
+        width: 40%;
+        max-height: 90vh;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(245, 194, 107, 0.2);
+        padding-bottom: 5%;
+        text-align: center;
+        background-color: #0F0F14;
+        transition: all 0.3s ease;
+
+        .color{
+            color: #4B1C71;
+        }
+        span{
+            color: var.$couleur-orange;
+        }
+    }
+
+    .galerie-content p{
         color: var.$couleur-principale;
         text-align: center;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 30px;
     }
-    .theme-content h3{
+    .galerie-content h3{
         text-align: center;
     }
-    .theme-content{
-        width: 40%;
+    .galerie-img img{
+        width: 100%;
+        height: 30vh;
+        margin: 20px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        margin: auto;
     }
-}
-
-.theme-img img{
-    width: 30%;
-    height: 30vh;
     
 }
+
+
+
 
 
