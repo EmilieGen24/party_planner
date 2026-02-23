@@ -30,7 +30,6 @@
     display: block;
     text-align: center;
     justify-self: center;
-    // background: black;
     border: 2px solid var.$couleur-rose;
     font-family: var.$police-secondaire;
     color: #E83E8C;
@@ -56,6 +55,66 @@
 }
 
 .btn-add:hover{  
+    box-shadow: 2px 5px 20px var.$couleur-rose;
+}
+
+.btn-modif{
+    @include mix.button;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    justify-self: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    border: 2px solid var.$couleur-rose;
+    font-family: var.$police-secondaire;
+    color:black;
+    font-size: 2rem;
+    background-color: #E83E8C;
+}
+
+.btn-modif:hover{  
+    box-shadow: 2px 5px 20px var.$couleur-rose;
+}
+
+.btn-sup{
+    @include mix.button;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    justify-self: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    border: 2px solid var.$couleur-rose;
+    font-family: var.$police-secondaire;
+    color: #E83E8C;
+    font-size: 2rem;
+    background-color: transparent;
+}
+
+.btn-sup:hover{  
+    box-shadow: 2px 5px 20px var.$couleur-rose;
+}
+
+.btn-comment{
+    @include mix.button;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    justify-self: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    border: 2px solid var.$couleur-rose;
+    font-family: var.$police-secondaire;
+    color: #E83E8C;
+    font-size: 1.5rem;
+    // background-color: transparent;
+}
+
+.btn-comment:hover{  
     box-shadow: 2px 5px 20px var.$couleur-rose;
 }
 

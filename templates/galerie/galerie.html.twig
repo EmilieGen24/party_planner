@@ -40,19 +40,6 @@
 				{% endfor %}
                 <p>{{theme.description}}</p>
                 <a class="btn-plus" href={{ path("theme", {'id' : theme.id})}}>Voir plus</a>
-               
-                {# Uniquement pour les USER #}
-                {# {% if is_granted('ROLE_USER')%} #}
-                {# <div class="btn-theme">
-                    <a class="btn-modif" href={{ path("update_theme", {'id' : theme.id})}}>Modifier</a>
-                    <form action="{{ path("delete", {'id' : theme.id}) }}" method="POST" onsubmit="return confirm ('Confirmer la suppression?')">
-                        <input type="hidden" name="_method" value="delete">
-                        <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ theme.id)}}">
-                        <input class="btn-sup" id="delete" type="submit" value="Supprimer">
-                    </form>
-                </div> #}
-                {# {% endif %} #}
-
             </div> 
             {% endfor %}
         </div>
