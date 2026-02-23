@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Mime\Email;
 
 final class ContactController extends AbstractController
 {
@@ -31,6 +31,7 @@ final class ContactController extends AbstractController
                     "Message : {$data['message']}"
                 );
                 $mailer->send($email);
+                $this->addFlash("success-contact","Le message a été envoyé");
         }
         return $this->render('contact/contact.html.twig', [
             'form' =>$form->createView(),

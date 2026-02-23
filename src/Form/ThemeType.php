@@ -21,7 +21,7 @@ class ThemeType extends AbstractType
     {
         $builder
             ->add('titre', TextType::class,[
-                'label'=> 'Le nom de ton titre : ',
+                'label'=> 'Titre du thème : ',
                 'constraints'=>[
                     new Assert\NotBlank([
                         'message'=>'Le champ titre ne peux pas être vide',]),
@@ -38,15 +38,18 @@ class ThemeType extends AbstractType
             ])
             ->add('colors', EntityType::class, [
                 'class' => Color::class,
-                'label' => 'Couleur : ',
+                'label' => 'Couleur(s) : ',
                 'choice_label' => 'name',
+                'attr' => [
+                    'class' => 'add-color'
+                ],
                 'multiple' => true,
                 'expanded' => true,
 
             ])
              ->add('imageFile', FileType::class, [
                 'required' => false,
-                'label' => ' ',
+                'label' => " ",
                 'mapped' => true,
                 'attr' => [
                     'class' => 'add-img'

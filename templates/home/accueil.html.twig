@@ -5,6 +5,12 @@
 {% block body %}
 <main class="bg">
     <section class="container">
+    {# MESSAGE ALERT REGISTER #}
+    {% for message in app.flashes('success')%}  
+        <div class="alert alert-success"> 
+            {{ message }}
+        </div>
+    {% endfor %}
         <div class="hero">
             <h1>Des soirées qui brillent autant que vos idées</h1>
             <p>Crée, imagine et partage des thèmes de soirées inspirantes et mémorables.</p>

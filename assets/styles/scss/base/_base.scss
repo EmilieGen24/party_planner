@@ -31,6 +31,7 @@ h3{
     color: var.$couleur-rose;
     font-size: 2.8rem;
 }
+
 h4{
     font-family: var.$police-secondaire;
     color: var.$couleur-principale;
@@ -38,4 +39,22 @@ h4{
     margin-top: 0;
     margin-bottom: 20px;
     text-align: center;
+}
+
+// label : login - register - contact -
+label{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: var.$couleur-purple;
+    display: block;
+    font-size: 1.5rem;
+}
+
+// input : login - register - contact -
+input{
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #E83E8C;
+    align-self: center;
 }

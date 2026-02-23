@@ -22,7 +22,7 @@ final class AddThemeController extends AbstractController
             $entityManager->persist($theme);
             $entityManager->flush();
             $this->addFlash('success-add','Votre thème est ajouté avec succès !');
-            return $this->redirectToRoute('accueil');
+            return $this->redirectToRoute('galerie');
         }
         return $this->render('add_theme/add_theme.html.twig', [
             'themeform' => $form->createView(),

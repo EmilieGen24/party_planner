@@ -3,14 +3,15 @@
 {% block title %}Hello AddThemeController!{% endblock %}
 
 {% block body %}
-<div class="container form-add">
-    <h2>Créer votre article</h2>
+<section class="container form-create">
+    <h2>Créez votre thème de soirée</h2>
+    <div class="container form-add">
+        <h3>Votre thème</h3>
 
-    {{form_start(themeform)}}
-
-        {{form_widget(themeform)}}
-            <button class="btn-add">Créer le thème</button>
-
-    {{form_end(themeform)}}
-</div>  
+        {{form_start(themeform)}}
+            {{form_widget(themeform)}}
+                <button class="btn-add">Créer le thème</button>
+        {{form_end(themeform)}}
+    </div>
+</section>
 {% endblock %}

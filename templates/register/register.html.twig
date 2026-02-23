@@ -3,12 +3,14 @@
 {% block title %}Hello RegisterController!{% endblock %}
 
 {% block body %}
-<div class="container form-user">
-    <h2>Inscription</h2>
-    {{form_start(userform)}}
-        {{form_widget(userform)}}
-        <button class="btn-inscrire">S'inscrire</button>
-    {{form_end(userform)}}
+<div class="container register">
+    <h2>Inscrivez-vous et créez votre thème</h2>
+    <div class="form-register">
+        {{form_start(userform)}}
+            {{form_widget(userform)}}
+            <button class="btn-register">S'inscrire</button>
+        {{form_end(userform)}}
+    </div>
 </div>
 
 {% endblock %}

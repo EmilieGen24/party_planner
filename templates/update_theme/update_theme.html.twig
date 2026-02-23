@@ -3,9 +3,14 @@
 {% block title %}Hello UpdateThemeController!{% endblock %}
 
 {% block body %}
-    {{form_start(themeform)}}
+<section class="container form-update">
+    <h2>Un changement sur votre thème de soirée, c'est ici !</h2>
+    <div class="container form-modif">
+        <h3>Thème à modifier</h3>
+        {{form_start(themeform)}}
         {{form_widget(themeform)}}
-        <button>Modifier</button>
-    {{form_end(themeform)}}
-
+        <button class="btn-update">Modifier</button>
+        {{form_end(themeform)}}
+    </div>
+</section>
 {% endblock %}

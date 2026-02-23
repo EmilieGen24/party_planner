@@ -45,10 +45,13 @@
                         <p class="comment-text">" {{ comment.commentText }}" </p>
                     </div>  
                 {% endfor %}
+                {# Uniquement pour les UTILISATEURS #}
+                 {% if is_granted('ROLE_USER')%}
                 {{form_start(commentform)}}
                         {{form_widget(commentform)}}
                         <button class="btn-comment">Ajouter un commentaire</button>
                 {{form_end(commentform)}}
+                 {% endif %}
             </div>
     </div>
 </section>

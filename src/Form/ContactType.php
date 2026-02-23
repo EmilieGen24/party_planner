@@ -20,7 +20,7 @@ class ContactType extends AbstractType
             // ->add('roles')
             // ->add('password')
              ->add('name', TextType::class,[
-                'label' => 'Nom : ',
+                'label' => "Nom d'utilisateur : ",
                 'attr' => [
                     'class' => 'contact-label'
                 ]

@@ -19,7 +19,7 @@ class RegisterType extends AbstractType
             // ->add('username')
             // ->add('roles')
             ->add('username', TextType::class,[
-                'label' => 'Nom utilisateur : ',
+                'label' => "Nom d'utilisateur : ",
                 'attr' => [
                     'class' => 'inscription-label'
                 ]
