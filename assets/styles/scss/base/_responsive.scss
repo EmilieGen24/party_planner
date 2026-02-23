@@ -1,0 +1,210 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+// ----------RESPONSIVE TABLETTE-----------------------
+@media screen and (max-width: 768px){
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 2.7rem;
+    }
+    h3{
+        font-size: 2.5rem;
+    }
+    // header ------menu burger----------
+    header .nav ul{ 
+        display: none;
+    }
+    .navbar{
+        display: flex;
+    }
+    header .header-logo {
+        width: 30%;
+    }
+    .header-logo img{
+        padding-top: 30px;
+    }
+
+    header .menu-burger{
+        display: flex;
+        justify-content: end;
+            .icon-burger{
+                width: 20%;
+                display: block;       
+            }
+    }
+
+    // footer--------------
+    footer .footer-content{
+        gap: 5px;
+    }
+    footer .copy p{
+        margin-top: 30px;
+        font-size: 0.8rem;
+    }
+
+    // page accueil--------------
+    .hero{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .card{
+        flex-direction: column;
+    }
+    .card-content{
+        width: 50%;
+    }
+    
+    // page themes--------
+    .galerie .galerie-text{
+        margin-left: 10%;
+        margin-right: 10%;
+        p{
+            font-size: 1.8rem;
+        }
+    }
+    .galerie-card{
+        justify-content: center;
+    }
+    .galerie-card .galerie-content{
+        width: 60%;
+    }
+    .galerie-card .galerie-content p{
+        font-size: 1.7rem;
+    }
+
+    // page par theme--------
+    .theme{
+        flex-direction: column;
+    }
+    .theme-content {
+        width: 80%;
+    }
+    .theme-comment{
+        width: 80%;
+    }
+
+    // page par create--------
+    .form-add{
+        width: 80%;
+    }
+
+    // page par update--------
+    .form-modif {
+        width: 80%;
+    }
+
+    // page par login--------
+    .login {
+        width: 80%;
+    }
+    .connect{
+        font-size: 1.6rem;
+    }
+
+    // page par register--------
+    .form-register {
+        width: 80%;
+    }
+
+    // page par contact--------
+    .form-contact {
+        width: 80%;
+    }
+}
+
+// RESPONSIVE MOBILE
+
+@media screen and (max-width: 576px){
+    h1{
+        font-size: 2.8rem;
+    }
+    h2{
+        font-size: 2.5rem;
+    }
+    h3{
+        font-size: 2rem;
+    }
+    input{
+        width: 90%;
+    }
+
+    // footer--------------
+    footer .footer-content .footer-logo img{
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+    footer .footer-content{
+        flex-direction: column;
+        gap: 20px;
+    }
+    footer .footer-content .logo-reseaux{
+        padding-left: 30px;
+        width: 30%;
+    }
+
+    // page accueil--------------   
+    .hero{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .card-content{
+        width: 70%;
+    }
+
+    // page par theme--------
+    .theme-content {
+        width: 90%;
+    }
+    .theme-comment{
+        width: 90%;
+    }
+    .btn-modif{
+        font-size: 1.5rem;
+    }
+    .btn-sup{
+        font-size: 1.5rem;
+    }
+
+    // page par modifier--------
+    .form-update h2{
+        margin-top: 8%;
+        margin-bottom: 8%;
+    }
+    .btn-update{
+        font-size: 1.3rem;
+    }
+
+     // page par create--------
+    .btn-add{
+        font-size: 1.5rem;
+    }
+    .form-add{
+        width: 90%;
+    }
+    // page par login--------
+    .login {
+        width: 90%;
+    }
+    .btn-primary{
+        width: 50%;
+    }
+
+    // page par register--------
+    .form-register {
+        width: 90%;
+    }
+
+    // page par contact--------
+    .form-contact {
+        width: 80%;
+    }
+    .contact-area {
+        width: 90%;
+    }
+    .btn-send{
+        width: 60%;
+    }
+}
