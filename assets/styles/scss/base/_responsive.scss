@@ -53,7 +53,7 @@
         flex-direction: column;
     }
     .card-content{
-        width: 50%;
+        width: 60%;
     }
     
     // page themes--------
@@ -68,7 +68,7 @@
         justify-content: center;
     }
     .galerie-card .galerie-content{
-        width: 60%;
+        width: 80%;
     }
     .galerie-card .galerie-content p{
         font-size: 1.7rem;
@@ -154,7 +154,7 @@
         width: 70%;
     }
 
-    // page par theme--------
+    // page theme--------
     .theme-content {
         width: 90%;
     }
@@ -168,7 +168,7 @@
         font-size: 1.5rem;
     }
 
-    // page par modifier--------
+    // page modifier--------
     .form-update h2{
         margin-top: 8%;
         margin-bottom: 8%;
@@ -177,14 +177,14 @@
         font-size: 1.3rem;
     }
 
-     // page par create--------
+     // page create--------
     .btn-add{
         font-size: 1.5rem;
     }
     .form-add{
         width: 90%;
     }
-    // page par login--------
+    // page login--------
     .login {
         width: 90%;
     }
@@ -192,12 +192,12 @@
         width: 50%;
     }
 
-    // page par register--------
+    // page register--------
     .form-register {
         width: 90%;
     }
 
-    // page par contact--------
+    // page contact--------
     .form-contact {
         width: 80%;
     }
@@ -205,6 +205,15 @@
         width: 90%;
     }
     .btn-send{
+        width: 60%;
+    }
+
+    // page forgot password--------
+    .forgot {
+        width: 90%;
+    }
+    
+    .btn-forgot{
         width: 60%;
     }
 }

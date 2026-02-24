@@ -181,7 +181,7 @@
     box-shadow: 2px 5px 20px var.$couleur-rose;
 }
 
-// ---------- PAGE REGISTER -------------------
+// ---------- PAGE CONTACT -------------------
 .btn-send{
     @include mix.button;
     transition: all 0.3s ease;
@@ -220,6 +220,48 @@
 }
 
 .btn-update:hover{  
+    box-shadow: 2px 5px 20px var.$couleur-rose;
+}
+
+// ---------- PAGE MOT DE PASSE OUBLIE/RESET -------------------
+.btn-forgot{
+    @include mix.button;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    justify-self: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    border: 2px solid var.$couleur-rose;
+    font-family: var.$police-secondaire;
+    color: #E83E8C;
+    font-size: 1.5rem;
+    width: 40%;
+}
+
+.btn-forgot:hover{  
+    box-shadow: 2px 5px 20px var.$couleur-rose;
+}
+
+// ---------- PAGE MOT DE PASSE OUBLIE -------------------
+.btn-reset{
+    @include mix.button;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    justify-self: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    border: 2px solid var.$couleur-rose;
+    font-family: var.$police-secondaire;
+    color: #E83E8C;
+    font-size: 1.5rem;
+    width: 40%;
+}
+
+.btn-reset:hover{  
     box-shadow: 2px 5px 20px var.$couleur-rose;
 }
 

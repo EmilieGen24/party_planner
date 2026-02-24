@@ -426,3 +426,40 @@ label[for="theme_imageFile"]{
     border-radius: 15px;
 }
 
+// --------------PAGE RESET/PASSWORD----------------------
+
+.reset{
+    text-align: center;
+    background: linear-gradient(135deg, #E83E8C, #FF8C42);
+    box-shadow: 0 10px 30px rgba(245, 194, 107, 0.2);
+    border-radius: 15px;
+    width: 60%;
+    padding: 30px 50px;
+    justify-self: center;
+    margin-bottom: 10%;
+    margin-top: 5%; 
+}
+
+.reset h3{
+    color: var.$couleur-principale;
+}
+
+// --------------PAGE REQUEST/PASSWORD----------------------
+
+.forgot{
+    text-align: center;
+    background: linear-gradient(135deg, #E83E8C, #FF8C42);
+    box-shadow: 0 10px 30px rgba(245, 194, 107, 0.2);
+    border-radius: 15px;
+    width: 70%;
+    padding: 30px 50px;
+    justify-self: center;
+    margin-bottom: 10%;
+    margin-top: 5%; 
+}
+
+.forgot h3{
+    color: var.$couleur-principale;
+}
+
+

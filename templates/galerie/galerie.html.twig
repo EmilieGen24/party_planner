@@ -21,9 +21,7 @@
         <div class="galerie-text">
             <h2>Découvrez notre galerie de thèmes pour des soirées inoubliables</h2>
             <p>Nous vous proposons une liste de soirées mais vous pouvez aussi créer la vôtre.</p>
-                {% if is_granted('ROLE_USER')%}
-                <a class="btn-add" href={{ path("add_theme")}}>Ajouter un thème</a>
-                {% endif %}
+            <a class="btn-add" href={{ path("add_theme")}}>Ajouter un thème</a>
         </div>
         <div class="galerie-card">
             {% for theme in themes %}

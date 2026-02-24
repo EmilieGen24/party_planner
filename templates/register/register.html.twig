@@ -10,7 +10,11 @@
             {{form_widget(userform)}}
             <button class="btn-register">S'inscrire</button>
         {{form_end(userform)}}
+        <div>
+            <a href="{{ path("app_login") }}">Déjà inscrit ? Se connecter</a>
+        </div>
     </div>
+
 </div>
 
 {% endblock %}
