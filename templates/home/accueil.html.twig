@@ -11,6 +11,12 @@
             {{ message }}
         </div>
     {% endfor %}
+    {# MESSAGE ALERT RESET PASSWORD #}
+    {% for message in app.flashes('success-reset')%}  
+        <div class="alert alert-success"> 
+            {{ message }}
+        </div>
+    {% endfor %}
         <div class="hero">
             <h1>Des soirées qui brillent autant que vos idées</h1>
             <p>Crée, imagine et partage des thèmes de soirées inspirantes et mémorables.</p>

@@ -6,7 +6,6 @@
 
 // SECTION HERO
 .hero{
-    // background: linear-gradient(135deg, #4B1C71, #E83E8C, #FF8C42);
     background-color: rgba(121, 18, 104, 0.5);
     border-radius: 15px;
     padding: 40px;
@@ -51,7 +50,7 @@
             box-shadow: 0 10px 30px rgba(245, 194, 107, 0.2);
             padding-bottom: 5%;
             text-align: center;
-            background-color: #0F0F14;
+            background-color: var.$couleur-secondaire;
             transition: all 0.3s ease;
         }
 
@@ -75,7 +74,7 @@
 
 // Message d'alerte
 .alert-success{
-    color: #E83E8C;
+    color: var.$couleur-rose;
     text-align: center;
     margin-top: 5%;
     font-size: 2rem;
@@ -86,22 +85,20 @@
     margin-bottom: 10%;
     
     .galerie-text{
-        background-color: rgba(0,0,0,0.4);
+        background-color: rgba(121, 18, 104, 0.4);
         box-shadow: 0 10px 30px rgba(245, 194, 107, 0.2);
         border-radius: 15px;
         padding: 50px;
         margin-bottom: 5%;
-        // position: static;
     }
 }
 
 .galerie p{
     color: white;
     text-align: center;
-    // z-index: 1;
-    // position: static;
     font-size: 2rem;
 }
+
 .galerie-card{
     display: flex;
     justify-content: space-between;
@@ -124,7 +121,7 @@
         transition: all 0.3s ease;
 
         .color{
-            color: #4B1C71;
+            color: var.$couleur-purple;
         }
         span{
             color: var.$couleur-orange;
@@ -174,7 +171,7 @@
     box-shadow: 0 10px 30px rgba(245, 194, 107, 0.2);
     padding-bottom: 5%;
     text-align: center;
-    background-color: #0F0F14;
+    background-color: var.$couleur-secondaire;
     padding: 30px;
 
     span{
@@ -356,7 +353,6 @@ label[for="theme_imageFile"]{
     background-size: cover;
     display: block;
     text-align: center;
-    // background-color: rgba(91, 14, 95, 0.353);
     width: 50px;
     height: 10px;
     padding: 70px;
@@ -462,4 +458,18 @@ label[for="theme_imageFile"]{
     color: var.$couleur-principale;
 }
 
+// --------------PAGE MENTIONS LEGALES----------------------
+.mentions-legales{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: var.$couleur-principale;
+    background-color:var.$couleur-secondaire;
+    border-radius: 15px;
+    padding: 30px;
+    
+}
+.mentions-legales h3{
+    color: var.$couleur-orange;
+    margin-bottom: 2%;
+}
 

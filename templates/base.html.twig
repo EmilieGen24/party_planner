@@ -30,7 +30,7 @@
                     </ul>
                      <!-- menu-burger avec fonction JS-->
                     <div class="menu-burger">
-                        <img onclick="menu()" class="icon-burger" src="{{ asset('../assets/img/boule_disco.png')}}" alt="Image du menu de navigation"> 
+                        <img onclick="menu()" class="icon-burger" src="{{ asset('../assets/img/menu_burger.png')}}" alt="Image du menu de navigation"> 
                     </div>
                 </div>
             </nav>
@@ -42,7 +42,7 @@
                     <div class="footer-logo">
                         <a href="{{ path("accueil") }}"><img src="{{ asset('../assets/img/logo.png')}}" alt="Image du logo"></a>
                     </div>
-                    <a href="">Mentions légales</a>
+                    <a href="{{ path("mentions_legales") }}">Mentions légales</a>
                     <a href="{{ path("contact") }}">Formulaire de contact</a>
                     <div class="logo-reseaux">
                         <img src="{{ asset('../assets/img/logo_fb.png')}}" alt="Logo de Facebook">
@@ -55,6 +55,7 @@
                 </div>
             </section>
         </footer>
+        {# Fonction JS #}
         <script>
             // fonction menu burger
             function menu() {
