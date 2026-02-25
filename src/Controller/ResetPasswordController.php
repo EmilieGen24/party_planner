@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Form\ResetPasswordFormType;
-use App\Form\ResetPasswordRequestFormType;
+use App\Form\RequestPasswordType;
+use App\Form\ResetPasswordType;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,14 +13,15 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Symfony\Component\Validator\Constraints\Uuid;
+use Symfony\Component\Uid\Uuid;
+
 
 final class ResetPasswordController extends AbstractController
 {
     #[Route('/reset/password', name: 'forgot_password')]
     public function request(Request $request, UserRepository $userRepository, EntityManagerInterface $entityManager, MailerInterface $mailer): Response
     {
-        $form = $this->createForm(ResetPasswordRequestFormType::class);
+        $form = $this->createForm(RequestPasswordType::class);
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()){
@@ -43,7 +44,7 @@ final class ResetPasswordController extends AbstractController
                 $mailer->send($email);
                 $this->addFlash('success-reset', 'Un email de réinitialisation a été envoyé.');
 
-                return $this->redirectToRoute('login');
+                return $this->redirectToRoute('accueil');
             }
 
             $this->addFlash('error','Aucun utilisateur trouvé pour cet email.');
@@ -63,7 +64,7 @@ final class ResetPasswordController extends AbstractController
             return $this->redirectToRoute('forgot_password');
         }
 
-        $form = $this->createForm(ResetPasswordFormType::class);
+        $form = $this->createForm(ResetPasswordType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
@@ -76,7 +77,7 @@ final class ResetPasswordController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('success-password','Votre mot de passe a été mis à jour avec succès !');
-            return $this->redirectToRoute('login');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('reset_password/reset_password.html.twig', [

@@ -4,8 +4,10 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use DateTime;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -47,10 +49,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private Collection $themes;
 
     #[ORM\Column(nullable: true)]
-    private ?\DateTime $resetToken = null;
+    private ?string $resetToken = null;
 
-    #[ORM\Column(nullable: true)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTime $resetTokenExpiresAt = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $email = null;
 
     public function __construct()
     {
@@ -199,24 +204,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getResetToken(): ?DateTime
+    public function getResetToken(): ?string
     {
         return $this->resetToken;
     }
 
-    public function setResetToken(?\DateTime $resetToken): static
+    public function setResetToken(?string $resetToken): self
     {
         $this->resetToken = $resetToken;
 
         return $this;
     }
 
-    public function getResetTokenExpiresAt(): ?\DateTime
+    public function getResetTokenExpiresAt(): ?\DateTimeInterface
     {
         return $this->resetTokenExpiresAt;
     }
 
-    public function setResetTokenExpiresAt(?\DateTime $resetTokenExpiresAt): static
+    public function setResetTokenExpiresAt(?DateTimeInterface $resetTokenExpiresAt): self
     {
         $this->resetTokenExpiresAt = $resetTokenExpiresAt;
 
@@ -226,5 +231,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function isResetTokenValid(): bool
     {
         return $this->resetTokenExpiresAt && $this ->resetTokenExpiresAt > new \Datetime();
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): static
+    {
+        $this->email = $email;
+
+        return $this;
     }
 }

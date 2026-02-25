@@ -15,9 +15,11 @@
     // header ------menu burger----------
     header .nav ul{ 
         display: none;
+        
     }
     .navbar{
         display: flex;
+        gap: 30%;
     }
     header .header-logo {
         width: 30%;
