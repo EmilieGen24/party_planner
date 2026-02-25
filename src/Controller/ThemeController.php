@@ -15,15 +15,6 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class ThemeController extends AbstractController
 {
-    // #[Route('/theme/{id}', name: 'theme')]
-    //  public function index(ThemeRepository $repository): Response
-    // {
-    //     $themes = $repository->findAll();
-    //     return $this->render('theme/theme.html.twig', [
-    //         'themes' => $themes,
-    //     ]);
-    // }
-
     #[Route('/theme/{id}', name: 'theme')]
     
     public function commentary(ThemeRepository $repository, Theme $themes, Request $request, Security $security, EntityManagerInterface $entityManager): Response
