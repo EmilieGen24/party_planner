@@ -25,7 +25,7 @@ final class ResetPasswordController extends AbstractController
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()){
-            $email = $form->get('email')->getData();
+            $email = $form->get('email')->getData(); 
             $user = $userRepository->findOneBy(['email' =>$email]);
 
             if ($user) {
