@@ -30,7 +30,7 @@ class ThemeType extends AbstractType
                     'class' => 'add-theme'
                 ]
             ])
-             ->add('description', TextareaType::class,[
+            ->add('description', TextareaType::class,[
                 'label' => 'Description : ',
                 'attr' => [
                     'class' => 'add-theme-area'
@@ -40,14 +40,16 @@ class ThemeType extends AbstractType
                 'class' => Color::class,
                 'label' => 'Couleur(s) : ',
                 'choice_label' => 'name',
+                'choice_attr' => function(Color $color) {
+                    return ['data-hex' => $color->getHexCode()];
+                },
                 'attr' => [
                     'class' => 'add-color'
                 ],
                 'multiple' => true,
                 'expanded' => true,
-
             ])
-             ->add('imageFile', FileType::class, [
+            ->add('imageFile', FileType::class, [
                 'required' => false,
                 'label' => " ",
                 'mapped' => true,

@@ -29,7 +29,7 @@ class Theme
     /**
      * @var Collection<int, Color>
      */
-    #[ORM\ManyToMany(targetEntity: Color::class, mappedBy: 'theme')]
+    #[ORM\ManyToMany(targetEntity: Color::class, inversedBy: 'themes')]
     private Collection $colors;
 
     /**
@@ -57,7 +57,6 @@ class Theme
     public function setTitre(string $titre): static
     {
         $this->titre = $titre;
-
         return $this;
     }
 
@@ -69,7 +68,6 @@ class Theme
     public function setDescription(string $description): static
     {
         $this->description = $description;
-
         return $this;
     }
 
@@ -85,18 +83,13 @@ class Theme
     {
         if (!$this->colors->contains($color)) {
             $this->colors->add($color);
-            $color->addTheme($this);
         }
-
         return $this;
     }
 
     public function removeColor(Color $color): static
     {
-        if ($this->colors->removeElement($color)) {
-            $color->removeTheme($this);
-        }
-
+        $this->colors->removeElement($color);
         return $this;
     }
 
@@ -114,19 +107,16 @@ class Theme
             $this->comments->add($comment);
             $comment->setTheme($this);
         }
-
         return $this;
     }
 
     public function removeComment(Comment $comment): static
     {
         if ($this->comments->removeElement($comment)) {
-            // set the owning side to null (unless already changed)
             if ($comment->getTheme() === $this) {
                 $comment->setTheme(null);
             }
         }
-
         return $this;
     }
 
@@ -145,7 +135,6 @@ class Theme
     public function setImageFile(?File $imageFile = null): void
     {
         $this->imageFile = $imageFile;
-
         if($imageFile) {
             $this->updatedAt = new \DateTimeImmutable();
         }
@@ -174,7 +163,6 @@ class Theme
     public function setUser(?User $user): static
     {
         $this->user = $user;
-
         return $this;
-    }    
+    }
 }

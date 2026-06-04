@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AddThemeController!{% endblock %}
+{% block title %}Party Planner{% endblock %}
 
 {% block body %}
 <section class="container form-create">
@@ -9,9 +9,16 @@
         <h3>Votre thème</h3>
 
         {{form_start(themeform)}}
-            {{form_widget(themeform)}}
-                <button class="btn-add-theme">Créer le thème</button>
-        {{form_end(themeform)}}
+            {{ form_row(themeform.titre) }}
+            {{ form_row(themeform.description) }}
+
+            <div class="colors-wrapper">
+                {{ form_row(themeform.colors) }}
+            </div>
+
+            {{ form_row(themeform.imageFile) }}
+            <button class="btn-add-theme">Créer le thème</button>
+        {{ form_end(themeform) }}
     </div>
 </section>
 {% endblock %}

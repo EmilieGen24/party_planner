@@ -19,6 +19,7 @@ final class AddThemeController extends AbstractController
         $form = $this->createForm(ThemeType::class, $theme);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
+            $theme->setUser($this->getUser());
             $entityManager->persist($theme);
             $entityManager->flush();
             $this->addFlash('success-add','Votre thème est ajouté avec succès !');

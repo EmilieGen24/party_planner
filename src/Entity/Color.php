@@ -18,11 +18,15 @@ class Color
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    /**
+    #[ORM\Column(length: 7)]
+    private ?string $hexCode = null;
+    
+   /**
      * @var Collection<int, Theme>
-     */
-    #[ORM\ManyToMany(targetEntity: Theme::class, inversedBy: 'colors')]
-    private Collection $theme;
+    */
+
+#[ORM\ManyToMany(targetEntity: Theme::class, inversedBy: 'colors')]
+  private Collection $theme;
 
     public function __construct()
     {
@@ -42,31 +46,38 @@ class Color
     public function setName(string $name): static
     {
         $this->name = $name;
+        return $this;
+    }
 
+    public function getHexCode(): ?string
+    {
+        return $this->hexCode;
+    }
+
+    public function setHexCode(string $hexCode): static
+    {
+        $this->hexCode = $hexCode;
         return $this;
     }
 
     /**
      * @return Collection<int, Theme>
      */
-    public function getTheme(): Collection
-    {
-        return $this->theme;
-    }
+     
+  public function getTheme(): Collection{
+      return $this->theme;}
 
     public function addTheme(Theme $theme): static
     {
         if (!$this->theme->contains($theme)) {
             $this->theme->add($theme);
         }
-
         return $this;
     }
 
     public function removeTheme(Theme $theme): static
     {
         $this->theme->removeElement($theme);
-
         return $this;
     }
 }

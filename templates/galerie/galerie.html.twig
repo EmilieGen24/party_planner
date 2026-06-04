@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello GalerieController!{% endblock %}
+{% block title %}Party Planner{% endblock %}
 
 {% block body %}
 <section class="container">
@@ -30,10 +30,12 @@
                     <img src="{{ asset('/uploads/images/' ~ theme.imageName)}}" alt="Image du thème">
                 </div>
                 <h3>{{theme.titre}}</h3>
-                <p class="color">Les couleur(s) :</p> 
-                {% for colors in theme.colors %}
-					<span>{{colors.name}}</span>
-				{% endfor %}
+                <p class="color">Les couleur(s) :</p>
+                <div class="colors-display">
+                    {% for color in theme.colors %}
+                        <span class="color-circle" style="background-color: {{ color.hexCode }}" title="{{ color.name }}"></span>
+                    {% endfor %}
+                </div>
                 <p>{{theme.description}}</p>
                 <a class="btn-plus" href={{ path("theme", {'id' : theme.id})}}>Voir plus</a>
             </div> 

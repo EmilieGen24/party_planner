@@ -5,5 +5,6 @@
   "build/images/bg.png": "/build/images/bg.045b6d4e.png",
   "build/fonts/Montserrat-Regular.ttf": "/build/fonts/Montserrat-Regular.b2667c14.ttf",
   "build/fonts/Pacifico-Regular.ttf": "/build/fonts/Pacifico-Regular.c0d735fc.ttf",
-  "build/images/boule_disco.png": "/build/images/boule_disco.178a8df5.png"
+  "build/images/boule_disco.png": "/build/images/boule_disco.178a8df5.png",
+  "build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_array-c1b08d.js": "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_array-c1b08d.js"
 }
