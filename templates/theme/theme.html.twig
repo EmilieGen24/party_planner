@@ -19,6 +19,9 @@
                     <img src="{{ asset('/uploads/images/' ~ themes.imageName)}}" alt="Image du thème">
                 </div>
                 <h3>{{themes.titre}}</h3>
+                {% if themes.type %}
+                    <p class="type">Type : {{ themes.type.name }}</p>
+                {% endif %}
                 <p class="color">Les couleur(s) :</p>
                 <div class="colors-display">
                     {% for color in themes.colors %}

@@ -38,6 +38,9 @@ class Theme
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'theme')]
     private Collection $comments;
 
+    #[ORM\ManyToOne(inversedBy: 'themes')]
+    private ?Type $type = null;
+
     public function __construct()
     {
         $this->colors = new ArrayCollection();
@@ -163,6 +166,17 @@ class Theme
     public function setUser(?User $user): static
     {
         $this->user = $user;
+        return $this;
+    }
+
+    public function getType(): ?Type
+    {
+        return $this->type;
+    }
+
+    public function setType(?Type $type): static
+    {
+        $this->type = $type;
         return $this;
     }
 }

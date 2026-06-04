@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Color;
 use App\Entity\Theme;
+use App\Entity\Type;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -34,6 +35,15 @@ class ThemeType extends AbstractType
                 'label' => 'Description : ',
                 'attr' => [
                     'class' => 'add-theme-area'
+                ]
+            ])
+            ->add('type', EntityType::class, [
+                'class' => Type::class,
+                'label' => 'Type d\'événement : ',
+                'choice_label' => 'name',
+                'placeholder' => 'Choisissez un type',
+                'attr' => [
+                    'class' => 'add-type'
                 ]
             ])
             ->add('colors', EntityType::class, [
