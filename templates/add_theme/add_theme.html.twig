@@ -8,16 +8,17 @@
     <div class="container form-add">
         <h3>Votre thème</h3>
 
-        {{form_start(themeform)}}
+        {{ form_start(themeform) }}
             {{ form_row(themeform.titre) }}
             {{ form_row(themeform.description) }}
             <div class="colors-wrapper">
                 {{ form_row(themeform.colors) }}
             </div>
             {{ form_row(themeform.imageFile) }}
-        {{ form_end(themeform) }}
+            {{ form_row(themeform.type) }}
 
-        <button class="btn-add-theme">Créer le thème</button>
+            <button type="submit" class="btn-add-theme">Créer le thème</button>
+        {{ form_end(themeform) }}
     </div>
 </section>
 {% endblock %}
